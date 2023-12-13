@@ -20,6 +20,9 @@
   line-height: 1.5rem;
   font-weight: 500;
 }
+.btn:hover {
+  background: rgb(193, 17, 25);
+}
 .banner {
   background-image: linear-gradient(
       to top,
@@ -90,6 +93,9 @@ input[type="submit"] {
   font-size: 1.5rem;
   font-weight: 500;
 }
+input[type="submit"]:hover {
+  background: rgb(193, 17, 25);
+}
 input[type="email"]::placeholder {
   color: #fff;
   font-size: 16px;
@@ -121,6 +127,26 @@ section {
 }
 .para2 {
   font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+.para3 {
+  margin-top: 2.85rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.para4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: underline;
+}
+.para5 {
+  margin-bottom: 20px;
+  font-size: 1rem;
   font-weight: 400;
   color: #fff;
 }
@@ -234,6 +260,11 @@ section {
 }
 .activeFAQ .faqIcons .faqIcon[name="add-outline"] {
   display: none;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 15px;
 }
 
 @media (min-width: 1920px) {
