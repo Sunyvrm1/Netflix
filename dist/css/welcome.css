@@ -20,7 +20,7 @@
   line-height: 1.5rem;
   font-weight: 500;
 }
-.btn a{
+.btn a {
   color: #fff;
   text-decoration: none;
 }
@@ -271,7 +271,7 @@ section {
   row-gap: 15px;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
   .width {
     width: calc(66.66666666666666% - 6rem);
   }
