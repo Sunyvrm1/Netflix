@@ -126,12 +126,19 @@ window.addEventListener("scroll", () => {
 
 const loginBtn = document.querySelector(".loginBtn");
 
+const users = {
+  Suny: "Suny123",
+  Sushil: "Sushil456",
+  sv: "Sv789",
+};
+
 loginBtn.addEventListener("click", () => {
   const email = document.getElementById("email").value;
   const pass = document.getElementById("pass").value;
 
-  if (email === "Suny" && pass === "Suny123") {
+  if (users.hasOwnProperty(email) && users[email] === pass) {
     window.location.href = "home.html";
+    console.log(users.hasOwnProperty(email));
   } else {
     console.log("fail");
   }
