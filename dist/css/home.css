@@ -207,6 +207,10 @@ button i {
   position: absolute;
   right: 0px;
   z-index: 10;
+  display: none;
+}
+.carousel:hover .switchRight {
+  display: block;
 }
 .carousel .switchLeft {
   position: absolute;
@@ -214,11 +218,6 @@ button i {
   z-index: 10;
   display: none;
 }
-/* .carouselbox .images img:hover {
-  transform: scale(1.2);
-  z-index: 2;
-} */
-
 @media (min-width: 1920px) {
   .poster {
     height: 90vh;

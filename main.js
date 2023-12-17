@@ -35,7 +35,6 @@ fetch("faq.json")
     const faqButtons = document.querySelectorAll(".btn1");
     faqButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        // const answer = document.querySelectorAll(".answer");
         const answer = button.parentElement.nextElementSibling;
         answer.classList.toggle("activeFAQ");
         button.classList.toggle("activeFAQ");
@@ -43,7 +42,7 @@ fetch("faq.json")
     });
   });
 
-// shfhsdbhfbsjdv
+// Slider UI slides
 
 const sliders = document.querySelectorAll(".carouselbox");
 
@@ -52,50 +51,48 @@ sliders.forEach((slider) => {
   const switchRight = slider.parentElement.querySelector(".switchRight");
 
   slider.addEventListener("scroll", function () {
-    // Check if the scroll position is at the beginning
     if (slider.scrollLeft === 0) {
       switchLeft.style.display = "none";
     } else {
       switchLeft.style.display = "block";
     }
 
-    // Check if the scroll position is at the end
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
       switchRight.style.display = "none";
     } else {
       switchRight.style.display = "block";
     }
   });
 
-  slider.addEventListener("mouseenter", () => {
-    switchLeft.style.opacity = "1";
-    switchRight.style.opacity = "1";
-  });
+  // slider.addEventListener("mouseenter", () => {
+  //   switchLeft.style.opacity = "1";
+  //   switchRight.style.opacity = "1";
+  // });
 
-  slider.addEventListener("mouseleave", () => {
-    switchLeft.style.opacity = "0";
-    switchRight.style.opacity = "0";
-  });
+  // slider.addEventListener("mouseleave", () => {
+  //   switchLeft.style.opacity = "0";
+  //   switchRight.style.opacity = "0";
+  // });
 
-  switchLeft.addEventListener("mouseenter", () => {
-    switchLeft.style.opacity = "1";
-    switchRight.style.opacity = "1";
-  });
+  // switchLeft.addEventListener("mouseenter", () => {
+  //   switchLeft.style.opacity = "1";
+  //   switchRight.style.opacity = "1";
+  // });
 
-  switchLeft.addEventListener("mouseleave", () => {
-    switchLeft.style.opacity = "0";
-    switchRight.style.opacity = "0";
-  });
+  // switchLeft.addEventListener("mouseleave", () => {
+  //   switchLeft.style.opacity = "0";
+  //   switchRight.style.opacity = "0";
+  // });
 
-  switchRight.addEventListener("mouseenter", () => {
-    switchLeft.style.opacity = "1";
-    switchRight.style.opacity = "1";
-  });
+  // switchRight.addEventListener("mouseenter", () => {
+  //   switchLeft.style.opacity = "1";
+  //   switchRight.style.opacity = "1";
+  // });
 
-  switchRight.addEventListener("mouseleave", () => {
-    switchLeft.style.opacity = "0";
-    switchRight.style.opacity = "0";
-  });
+  // switchRight.addEventListener("mouseleave", () => {
+  //   switchLeft.style.opacity = "0";
+  //   switchRight.style.opacity = "0";
+  // });
 
   switchLeft.addEventListener("click", () => {
     const scrollAmount = window.innerWidth;
