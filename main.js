@@ -42,7 +42,7 @@ fetch("faq.json")
     });
   });
 
-// Slider UI slides
+// -------------------------- Slider UI slides --------------------------
 
 const sliders = document.querySelectorAll(".carouselbox");
 
@@ -109,4 +109,30 @@ sliders.forEach((slider) => {
       behavior: "smooth",
     });
   });
+});
+
+// -------------------------- Header shrinking color --------------------------
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+  if (window.scrollY > 100) {
+    header.classList.add("activeBG");
+  } else {
+    header.classList.remove("activeBG");
+  }
+});
+
+// -------------------------- Sign in Username & Password --------------------------
+
+const loginBtn = document.querySelector(".loginBtn");
+
+loginBtn.addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("pass").value;
+
+  if (email === "Suny" && pass === "Suny123") {
+    window.location.href = "home.html";
+  } else {
+    console.log("fail");
+  }
 });
