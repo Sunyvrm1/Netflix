@@ -178,7 +178,7 @@ button i {
 .carouselbox .images {
   margin: 0px 10px;
 }
-.carouselbox .images:nth-child(1) {
+.carouselbox .images:nth-child(3) {
   margin-left: 2.5%;
 }
 .carouselbox .images img {

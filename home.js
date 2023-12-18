@@ -54,9 +54,18 @@ window.addEventListener("scroll", () => {
 fetch("https://api.themoviedb.org/3/discover/movie?api_key=d7667b78097516f5e82e6955576dcf62")
 .then((response) => response.json())
 .then((data) => {
-  console.log(data);
+    const newArray = data.results.splice(0, 10)
 
-  data.forEach((suny) => {
-    console.log(suny)
-  })
+    console.log(newArray);
+
+    newArray.forEach((arr, i) => {
+        console.log(i+1, arr)
+
+        const box = document.querySelector(".carouselbox");
+        const html = `<div class="images">
+               <p class="imagesPara">${i+1}</p>
+             <img src="https://image.tmdb.org/t/p/w500/${arr.poster_path}" alt="" />
+         </div>`
+      box.insertAdjacentHTML("beforeend", html)
+    })
 })
