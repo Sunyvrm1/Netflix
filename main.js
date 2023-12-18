@@ -138,7 +138,6 @@ loginBtn.addEventListener("click", () => {
 
   if (users.hasOwnProperty(email) && users[email] === pass) {
     window.location.href = "home.html";
-    console.log(users.hasOwnProperty(email));
   } else {
     console.log("fail");
   }
