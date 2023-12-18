@@ -222,7 +222,7 @@ button i {
   z-index: 10;
   display: none;
 }
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
   .poster {
     height: 90vh;
   }
