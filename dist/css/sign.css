@@ -159,4 +159,7 @@ label {
   .logo img {
     margin-left: 5%;
   }
+  .form {
+    padding: 60px 40px 120px;
+  }
 }
