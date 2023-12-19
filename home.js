@@ -102,9 +102,20 @@ fetch(
                <p class="imagesPara">${i + 1}</p>
              <img src="https://image.tmdb.org/t/p/w500/${
                arr.poster_path
-             }" alt="" />
+             }" alt="${arr.id}" />
          </div>`;
       box.insertAdjacentHTML("beforeend", html);
+    });
+
+    //Image clicked event
+
+    const images = document.querySelectorAll('.images img');
+    images.forEach((img) => {
+      img.addEventListener('click', (event) => {
+        const clickedId = event.target.getAttribute('alt');
+        storeClickedId(clickedId);
+        console.log('Clicked ID:', clickedId);
+      });
     });
   });
 
@@ -120,7 +131,7 @@ fetch(
       const box = document.querySelector(".carouselbox1");
       const html = `
          <div class="images1">
-         <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="" />
+         <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
           </div>
          `;
       box.insertAdjacentHTML("beforeend", html);
@@ -139,7 +150,7 @@ fetch(
       const box = document.querySelector(".carouselbox2");
       const html = `
            <div class="images1">
-           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="" />
+           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
             </div>
            `;
       box.insertAdjacentHTML("beforeend", html);
@@ -154,12 +165,12 @@ fetch(
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    const del = data.results[9];
+    delete data.results[7];
     data.results.map((arr) => {
       const box = document.querySelector(".carouselbox3");
       const html = `
            <div class="images1">
-           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="" />
+           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
             </div>
            `;
       box.insertAdjacentHTML("beforeend", html);
@@ -174,12 +185,11 @@ fetch(
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    const del = data.results[9];
     data.results.map((arr) => {
       const box = document.querySelector(".carouselbox4");
       const html = `
            <div class="images1">
-           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="" />
+           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
             </div>
            `;
       box.insertAdjacentHTML("beforeend", html);
@@ -188,31 +198,38 @@ fetch(
 
 // -------------------------- Calling API 6  --------------------------
 
+const storeClickedId = (clickedId) => {
+  localStorage.setItem('clickedId', clickedId);
+};
+
 fetch(
   "https://api.themoviedb.org/3/trending/tv/day?api_key=d7667b78097516f5e82e6955576dcf62"
 )
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    const del = data.results[9];
-    data.results.map((arr) => {
+
+    data.results.map((arr, i) => {
       const box = document.querySelector(".carouselbox5");
       const html = `
            <div class="images1">
-           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="" />
+           <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
             </div>
            `;
       box.insertAdjacentHTML("beforeend", html);
     });
 
-    // Img addEventListener
-    
-    const imgBase = document.querySelectorAll(".images1 img");
-    imgBase.forEach((suny) => {
-    suny.addEventListener("click", () => {
-      console.log("hello");
-    })
-})
+    //Image clicked event
+
+    const images = document.querySelectorAll('.images1 img');
+    images.forEach((img) => {
+      img.addEventListener('click', (event) => {
+        const clickedId = event.target.getAttribute('alt');
+        console.log('Clicked ID:', clickedId);
+        storeClickedId(clickedId);
+        window.location.href = 'series.html'
+      });
+    });
   });
 
 

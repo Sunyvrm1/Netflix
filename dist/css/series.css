@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+/* body{
+  background-color: #141414;
+} */
+.width {
+  width: 95%;
+  margin: 0 auto;
+}
+.header {
+width: 100%;
+  width: 100%;
+  background: #141414;
+}
+.activeBG {
+  background-color: #000;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  padding: 15px 0;
+}
+.col {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2em;
+  align-items: center;
+}
+.col .logo {
+  width: 130px;
+  height: max-content;
+}
+.col i {
+  color: #fff;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  color: #ffffff98;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: #ffffff;
+}
+.activeNavColor {
+  color: #ffffff;
+}
+.col .profile {
+    width: 32px;
+    border-radius: 0.15rem;
+  }
+.seriesBackRow img{
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    display: flex;
+}
+.overlay{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.664);
+    margin-top: -70vh;
+    position: relative;
+    z-index: 1;
+    padding: 30px 0;
+}
+.overlay img{
+    width: 300px;
+    height: auto;
+}
+.width1{
+    width: calc(83% - 6rem);
+    margin: 0 auto;
+}
+.row1{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    gap: 3rem;
+    color: #fff;
+    align-items: center;
+}
+.para1{
+    font-size: 1rem;
+}
+.para2{
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+h1{
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.col1 p:nth-child(2n){
+    margin-bottom: 20px;
+}
+.para2{
+    margin-bottom: 6px;
+}

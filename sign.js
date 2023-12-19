@@ -2,7 +2,7 @@
 
 const loginBtn = document.querySelector(".loginBtn");
 
-const users = {
+const u sers = {
   Suny: "Suny123",
   Sushil: "Sushil456",
   sv: "Sv789",
