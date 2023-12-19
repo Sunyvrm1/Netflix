@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;
 }
+body{
+  background-color: #141414;
+}
 .width {
   width: 95%;
   margin: 0 auto;
@@ -13,6 +16,7 @@
 .header {
   position: fixed;
   left: 50%;
+  top: 0;
   z-index: 99;
   transform: translate(-50%);
   width: 100%;
@@ -243,6 +247,7 @@ button i {
   align-items: center;
 }
 .carouselbox1 .images1 {
+  display: flex;
   margin: 0px 10px;
 }
 .carouselbox1 .images1:nth-child(3) {
@@ -317,6 +322,7 @@ button i {
   grid-template-columns: repeat(4, 1fr);
   row-gap: 15px;
 }
+
 @media (min-width: 1900px) {
   .poster {
     height: 90vh;
@@ -333,4 +339,136 @@ button i {
   .width1 {
     width: calc(66.66666666666666% - 6rem);
   }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .carouselbox{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .switchLeft, .switchRight{
+    display: none !important;
+  }
+  .carouselbox::-webkit-scrollbar {
+    display: none;
+  }
+  .carouselbox1{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .carouselbox1::-webkit-scrollbar {
+    display: none;
+  }
+  .width1 {
+    width: 95%;
+    margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 15px;
+}
+.poster, .posterText, .overlay, .posterImg{
+  height: 90vh;
+}
+.posterText{
+  width: 60%;
+}
+}
+@media (max-width: 960px) {
+  .carouselbox{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .switchLeft, .switchRight{
+    display: none !important;
+  }
+  .carouselbox::-webkit-scrollbar {
+    display: none;
+  }
+  .carouselbox1{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .carouselbox1::-webkit-scrollbar {
+    display: none;
+  }
+  .width1 {
+    width: 95%;
+    margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 15px;
+}
+.poster, .posterText, .overlay, .posterImg{
+  height: 90vh;
+}
+.posterText{
+  width: 60%;
+}
+}
+
+
+@media (max-width: 600px) {
+  .carouselbox{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .switchLeft, .switchRight{
+    display: none !important;
+  }
+  .carouselbox::-webkit-scrollbar {
+    display: none;
+  }
+  .carouselbox1{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .carouselbox1::-webkit-scrollbar {
+    display: none;
+  }
+  .width1 {
+    width: 95%;
+    margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 15px;
+}
+.poster, .posterText, .overlay, .posterImg{
+  height: 70vh;
+}
+.posterText{
+  width: 95%;
+}
+.para1 {
+  font-size: 1.25rem;
+  color: #fff;
+}
+.para3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-left: 2.5%;
+}
+.para2 {
+  font-size: 1rem;
+  color: #fff;
+}
+.overlay{
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
+}
+.top10{
+  margin-top: -60px;
+  background: linear-gradient( 180deg, rgba(20, 20, 20, 0), rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 1), rgba(20, 20, 20, 1), rgba(20, 20, 20, 1) );
+}
+.row1{
+  margin-top: -1px;
+}
+/* .activeBG {
+  background-color: currentColor;
+  position: static;
+} */
 }
