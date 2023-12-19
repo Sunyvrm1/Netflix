@@ -14,7 +14,7 @@
   margin: 0 auto;
 }
 .header {
-width: 100%;
+  width: 100%;
   width: 100%;
   background: #141414;
 }
@@ -27,6 +27,15 @@ width: 100%;
   align-items: center;
   gap: 2em;
   padding: 15px 0;
+}
+.row2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  margin-top: 35px;
+}
+.col2 {
+  width: 50%;
 }
 .col {
   display: flex;
@@ -59,53 +68,60 @@ nav ul li a:hover {
   color: #ffffff;
 }
 .col .profile {
-    width: 32px;
-    border-radius: 0.15rem;
-  }
-.seriesBackRow img{
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-    display: flex;
+  width: 32px;
+  border-radius: 0.15rem;
 }
-.overlay{
-    width: 100%;
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.664);
-    position: relative;
-    z-index: 1;
-    padding: 30px 0;
+.seriesBackRow img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: flex;
 }
-.overlay img{
-    width: 300px;
-    height: auto;
+.overlay {
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.664);
+  position: relative;
+  z-index: 1;
+  padding: 50px 0;
 }
-.width1{
-    width: calc(83% - 6rem);
-    margin: 0 auto;
+.overlay img {
+  width: 300px;
+  height: auto;
 }
-.row1{
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    gap: 3rem;
-    color: #fff;
-    align-items: center;
+.width1 {
+  width: calc(83% - 6rem);
+  margin: 0 auto;
 }
-.para1{
-    font-size: 1rem;
+.row1 {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  gap: 3rem;
+  color: #fff;
+  align-items: center;
 }
-.para2{
-    font-weight: 500;
-    font-size: 1.5rem;
+.para1 {
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
-h1{
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 30px;
+.para2 {
+  font-weight: 500;
+  font-size: 1.5rem;
 }
-.col1 p:nth-child(2n){
-    margin-bottom: 20px;
+h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
-.para2{
-    margin-bottom: 6px;
+#overview {
+  margin-bottom: 15px;
+}
+#rating {
+  margin-bottom: 15px;
+}
+#overview {
+  margin-bottom: 15px;
+}
+.para2 {
+  margin-bottom: 6px;
 }
