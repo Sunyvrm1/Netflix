@@ -204,4 +204,15 @@ fetch(
            `;
       box.insertAdjacentHTML("beforeend", html);
     });
+
+    // Img addEventListener
+    
+    const imgBase = document.querySelectorAll(".images1 img");
+    imgBase.forEach((suny) => {
+    suny.addEventListener("click", () => {
+      console.log("hello");
+    })
+})
   });
+
+
