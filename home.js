@@ -89,150 +89,39 @@ window.addEventListener("scroll", () => {
 
 // -------------------------- Calling API 1 --------------------------
 
-fetch(
-  "https://api.themoviedb.org/3/discover/movie?api_key=d7667b78097516f5e82e6955576dcf62"
-)
-  .then((response) => response.json())
-  .then((data) => {
-    const newArray = data.results.splice(0, 10);
 
-    newArray.forEach((arr, i) => {
-      const box = document.querySelector(".carouselbox");
-      const html = `<div class="images">
-               <p class="imagesPara">${i + 1}</p>
-             <img src="https://image.tmdb.org/t/p/w500/${
-               arr.poster_path
-             }" alt="${arr.id}" />
-         </div>`;
-      box.insertAdjacentHTML("beforeend", html);
-    });
-
-    //Image clicked event
-
-    const images = document.querySelectorAll(".images img");
-    images.forEach((img) => {
-      img.addEventListener("click", (event) => {
-        const clickedId = event.target.getAttribute("alt");
-        storeClickedId(clickedId);
-        console.log("Clicked ID:", clickedId);
+function top10fetchandDisplay(apiKey, clickHandler) {
+  fetch(apiKey)
+    .then((response) => response.json())
+    .then((data) => {
+      const newArray = data.results.splice(0, 10);
+  
+      newArray.forEach((arr, i) => {
+        const box = document.querySelector(".carouselbox");
+        const html = `<div class="images">
+                 <p class="imagesPara">${i + 1}</p>
+               <img src="https://image.tmdb.org/t/p/w500/${
+                 arr.poster_path
+               }" alt="${arr.id}" data-author="${apiKey}"/>
+           </div>`;
+        box.insertAdjacentHTML("beforeend", html);
+      });
+  
+      //Image clicked event
+  
+      const images = document.querySelectorAll(".images img");
+      images.forEach((img) => {
+        img.addEventListener("click", clickHandler);
       });
     });
-  });
+}
 
-// -------------------------- Calling API 2 --------------------------
+const apiKey = "https://api.themoviedb.org/3/tv/on_the_air?api_key=d7667b78097516f5e82e6955576dcf62";
 
-// fetch(
-//   "https://api.themoviedb.org/3/tv/on_the_air?api_key=d7667b78097516f5e82e6955576dcf62"
-// )
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     data.results.map((arr) => {
-//       const box = document.querySelector(".carouselbox1");
-//       const html = `
-//          <div class="images1">
-//          <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
-//           </div>
-//          `;
-//       box.insertAdjacentHTML("beforeend", html);
-//     });
-//   });
+top10fetchandDisplay(apiKey, handleImageClick);
 
-// // -------------------------- Calling API 3 --------------------------
 
-// fetch(
-//   "https://api.themoviedb.org/3/discover/tv?api_key=d7667b78097516f5e82e6955576dcf62"
-// )
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     data.results.map((arr) => {
-//       const box = document.querySelector(".carouselbox2");
-//       const html = `
-//            <div class="images1">
-//            <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
-//             </div>
-//            `;
-//       box.insertAdjacentHTML("beforeend", html);
-//     });
-//   });
-
-// // -------------------------- Calling API 4 --------------------------
-
-// fetch(
-//   "https://api.themoviedb.org/3/movie/upcoming?api_key=d7667b78097516f5e82e6955576dcf62"
-// )
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     delete data.results[7];
-//     data.results.map((arr) => {
-//       const box = document.querySelector(".carouselbox3");
-//       const html = `
-//            <div class="images1">
-//            <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
-//             </div>
-//            `;
-//       box.insertAdjacentHTML("beforeend", html);
-//     });
-//   });
-
-// // -------------------------- Calling API 5 --------------------------
-
-// fetch(
-//   "https://api.themoviedb.org/3/trending/movie/day?api_key=d7667b78097516f5e82e6955576dcf62"
-// )
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     data.results.map((arr) => {
-//       const box = document.querySelector(".carouselbox4");
-//       const html = `
-//            <div class="images1">
-//            <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
-//             </div>
-//            `;
-//       box.insertAdjacentHTML("beforeend", html);
-//     });
-//   });
-
-// // -------------------------- Calling API 6  --------------------------
-
-// const storeClickedId = (clickedId) => {
-//   localStorage.setItem("clickedId", clickedId);
-// };
-
-// fetch(
-//   "https://api.themoviedb.org/3/trending/tv/day?api_key=d7667b78097516f5e82e6955576dcf62"
-// )
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-
-//     data.results.map((arr, i) => {
-//       const box = document.querySelector(".carouselbox5");
-//       const html = `
-//            <div class="images1">
-//            <img src="https://image.tmdb.org/t/p/w500/${arr.backdrop_path}" alt="${arr.id}" />
-//             </div>
-//            `;
-//       box.insertAdjacentHTML("beforeend", html);
-//     });
-
-//     //Image clicked event
-
-//     const images = document.querySelectorAll(".images1 img");
-//     images.forEach((img) => {
-//       img.addEventListener("click", (event) => {
-//         const clickedId = event.target.getAttribute("alt");
-//         console.log("Clicked ID:", clickedId);
-//         storeClickedId(clickedId);
-//         window.location.href = "series.html";
-//       });
-//     });
-//   });
-
-// Fetch and display images
+// -------------------------- Fetch and display images --------------------------
 
 function fetchandDisplay(apiEndpoint, targetBox, clickHandler) {
   fetch(apiEndpoint)
@@ -242,7 +131,7 @@ function fetchandDisplay(apiEndpoint, targetBox, clickHandler) {
         const box = document.querySelector(targetBox);
         const html = `
         <div class="images1">
-          <img src="https://image.tmdb.org/t/p/w500/${item.backdrop_path}" alt="${item.id}" />
+          <img src="https://image.tmdb.org/t/p/w500/${item.backdrop_path}" alt="${item.id}" data-author="${apiEndpoint}"/>
         </div>`;
         // console.log(apiEndpoint);
         box.insertAdjacentHTML("beforeend", html);
@@ -261,8 +150,11 @@ function fetchandDisplay(apiEndpoint, targetBox, clickHandler) {
 
 function handleImageClick(event) {
   const clickedId = event.target.getAttribute("alt");
+  const clickedId1 = event.target.getAttribute("data-author");
   console.log("Clicked ID:", clickedId);
+  console.log("Clicked API:", clickedId1);
   localStorage.setItem("clickedId", clickedId);
+  localStorage.setItem("clickedId1", clickedId1);
   window.location.href = "series.html";
 }
 
@@ -276,21 +168,6 @@ const apiEndpoints = [
   "https://api.themoviedb.org/3/trending/tv/day?api_key=d7667b78097516f5e82e6955576dcf62",
 ];
 
-const middleTextArray = apiEndpoints.map((url) => {
-  const startIndex = url.indexOf("/3/") + 3; // Index after "/3/"
-  const endIndex = url.indexOf("?"); // Index before the query string
-  const middleText = url.substring(startIndex, endIndex);
-  return middleText;
-
-  function handleAPIClick(event) {
-    const clickedAPI = event.target.getAttribute("alt");
-    console.log("Clicked ID:", clickedAPI);
-    localStorage.setItem("clickedAPI", clickedAPI);
-  }
-});
-
-// console.log(middleTextArray);
-
 const targetBoxes = [
   ".carouselbox1",
   ".carouselbox2",
@@ -302,4 +179,13 @@ const targetBoxes = [
 // Loop through APIs to fetch and display images
 apiEndpoints.forEach((endpoint, index) => {
   fetchandDisplay(endpoint, targetBoxes[index], handleImageClick);
+});
+
+//nav
+
+const navIcon = document.querySelector(".navIcon");
+const navCont = document.querySelector(".header");
+
+navIcon.addEventListener("click", () => {
+  navCont.classList.toggle("active");
 });

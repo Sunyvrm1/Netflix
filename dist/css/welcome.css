@@ -220,19 +220,20 @@ section {
   z-index: 99;
 }
 .question button {
-  padding: 1.5rem;
+  padding: 1.25rem;
   width: 100%;
   cursor: pointer;
   background-color: transparent;
   border: none;
   color: #fff;
+  text-align: left;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: all 0.5s ease;
   z-index: 99;
-  line-height: 1em;
+  line-height: 1.5em;
 }
 .question button:hover {
   background-color: rgb(65, 65, 65);
@@ -282,8 +283,11 @@ section {
   }
 }
 @media (max-width: 960px) {
+  .row1 img {
+    width: 123px;
+  }
   .width {
-    width: calc(100% - 4rem);
+    width: 90%;
   }
   h1 {
     font-size: 2rem;
@@ -317,7 +321,7 @@ section {
 }
 @media (max-width: 600px) {
   .row1 img {
-    width: 25%;
+    width: 123px;
   }
   .BannerForm {
     flex-direction: column;

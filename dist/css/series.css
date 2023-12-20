@@ -125,3 +125,99 @@ h1 {
 .para2 {
   margin-bottom: 6px;
 }
+.para4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: underline;
+}
+.para5 {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
+.section {
+  padding: 4.5rem 0;
+  background-color: #141414;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 15px;
+}
+/* navigation */
+
+.navIconMenu {
+  width: 2em;
+  height: 2em;
+  color: #fff;
+}
+.navIconMenu[name="close-outline"] {
+  display: none;
+}
+.navIcon {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .navIcon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav{
+    position: absolute;
+    background-color: #141414;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+    width: 230px;
+    height: 100vh;
+    padding: 10px 20px;
+    transform: translateX(-230px);
+    transition: all 0.5s;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  .header{
+    position: relative;
+  }
+  .row1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    color: #fff;
+    align-items: center;
+  }
+.active nav {
+  transform: translateX(0);
+  opacity: 1;
+}
+.active .navIcon .navIconMenu[name="close-outline"] {
+  display: block;
+}
+.active .navIcon .navIconMenu[name="menu-outline"] {
+  display: none;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 15px;
+}
+}
+@media (max-width: 1279px) {
+  .width1{
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1900px) {
+  .width1 {
+    width: calc(66.66666666666666% - 6rem);
+  }
+}

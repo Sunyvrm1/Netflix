@@ -145,6 +145,10 @@ label {
   }
 }
 @media (max-width: 960px) {
+  .logo img {
+    width: 123px;
+    height: auto;
+}
   .width {
     width: calc(100% - 4rem);
   }
