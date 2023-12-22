@@ -89,13 +89,12 @@ window.addEventListener("scroll", () => {
 
 // -------------------------- Calling API 1 --------------------------
 
-
 function top10fetchandDisplay(apiKey, clickHandler) {
   fetch(apiKey)
     .then((response) => response.json())
     .then((data) => {
       const newArray = data.results.splice(0, 10);
-  
+
       newArray.forEach((arr, i) => {
         const box = document.querySelector(".carouselbox");
         const html = `<div class="images">
@@ -106,9 +105,9 @@ function top10fetchandDisplay(apiKey, clickHandler) {
            </div>`;
         box.insertAdjacentHTML("beforeend", html);
       });
-  
+
       //Image clicked event
-  
+
       const images = document.querySelectorAll(".images img");
       images.forEach((img) => {
         img.addEventListener("click", clickHandler);
@@ -116,10 +115,10 @@ function top10fetchandDisplay(apiKey, clickHandler) {
     });
 }
 
-const apiKey = "https://api.themoviedb.org/3/tv/on_the_air?api_key=d7667b78097516f5e82e6955576dcf62";
+const apiKey =
+  "https://api.themoviedb.org/3/tv/on_the_air?api_key=d7667b78097516f5e82e6955576dcf62";
 
 top10fetchandDisplay(apiKey, handleImageClick);
-
 
 // -------------------------- Fetch and display images --------------------------
 
@@ -188,4 +187,15 @@ const navCont = document.querySelector(".header");
 
 navIcon.addEventListener("click", () => {
   navCont.classList.toggle("active");
+});
+
+//Search Function
+
+const movieInput = document.getElementById("movieInput");
+movieInput.addEventListener("keypress", (event) => {
+  const movieInputValue = movieInput.value;
+  if (event.key === "Enter") {
+    window.location.href = "search.html";
+    localStorage.setItem("movieInputValue", movieInputValue);
+  }
 });
