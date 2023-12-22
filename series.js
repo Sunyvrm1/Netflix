@@ -3,10 +3,16 @@ const storedId1 = localStorage.getItem("clickedId1");
 // console.log(storedId);
 // console.log(storedId1);
 
+<<<<<<< Updated upstream
 
 function displayMovies(ApiURL, storedId)  {
 
 fetch(ApiURL)
+=======
+fetch(
+  "https://api.themoviedb.org/3/trending/tv/day?api_key=d7667b78097516f5e82e6955576dcf62"
+)
+>>>>>>> Stashed changes
   .then((response) => response.json())
   .then((data) => {
     // console.log(data);
