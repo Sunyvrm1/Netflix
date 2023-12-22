@@ -11,3 +11,17 @@ navIcon.addEventListener("click", () => {
 
 const storedSearch = localStorage.getItem("movieInputValue");
 console.log(storedSearch);
+
+fetch(
+  `https://api.themoviedb.org/3/search/movie?query=${storedSearch}&api_key=d7667b78097516f5e82e6955576dcf62`
+)
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+
+    data.results.map((apiImage) => {
+      const searchCont = document.querySelector(".seachCont");
+      const html = `<img src="https://image.tmdb.org/t/p/w500/${apiImage.poster_path}" alt="${apiImage.id}" />`;
+      searchCont.insertAdjacentHTML("beforeend", html);
+    });
+  });

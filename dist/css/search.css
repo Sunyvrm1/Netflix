@@ -95,6 +95,11 @@ nav ul li a:hover {
   z-index: 1;
   padding: 50px 0;
 }
+.seachCont img {
+  max-width: 150px;
+  height: 225px;
+  object-fit: cover;
+}
 
 @media (max-width: 960px) {
   .navIcon {
