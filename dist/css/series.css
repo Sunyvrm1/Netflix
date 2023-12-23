@@ -86,7 +86,7 @@ nav ul li a:hover {
   padding: 50px 0;
 }
 .overlay img {
-  width: 300px;
+  width: 100%;
   height: auto;
 }
 .width1 {
@@ -168,7 +168,7 @@ h1 {
     justify-content: flex-end;
     align-items: center;
   }
-  nav{
+  nav {
     position: absolute;
     background-color: #141414;
     top: 100%;
@@ -183,7 +183,7 @@ h1 {
   nav ul {
     flex-direction: column;
   }
-  .header{
+  .header {
     position: relative;
   }
   .row1 {
@@ -193,24 +193,24 @@ h1 {
     color: #fff;
     align-items: center;
   }
-.active nav {
-  transform: translateX(0);
-  opacity: 1;
-}
-.active .navIcon .navIconMenu[name="close-outline"] {
-  display: block;
-}
-.active .navIcon .navIconMenu[name="menu-outline"] {
-  display: none;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 15px;
-}
+  .active nav {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .active .navIcon .navIconMenu[name="close-outline"] {
+    display: block;
+  }
+  .active .navIcon .navIconMenu[name="menu-outline"] {
+    display: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
 }
 @media (max-width: 1279px) {
-  .width1{
+  .width1 {
     width: 95%;
     margin: 0 auto;
   }
