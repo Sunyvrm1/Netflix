@@ -197,4 +197,5 @@ movieInput.addEventListener("keypress", (event) => {
     window.location.href = "search.html";
     localStorage.setItem("movieInputValue", movieInputValue);
   }
+  movieInput.innerHTML = "";
 });

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+      }
+      .width {
+        width: 95%;
+        margin: 0 auto;
+      }
+      .header {
+        position: fixed;
+        left: 50%;
+        top: 0;
+        z-index: 99;
+        transform: translate(-50%);
+        width: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0)
+        );
+        transition: all 0.5s;
+      }
+      .activeBG {
+        background-color: #000;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+        padding: 15px 0;
+      }
+      .col {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2em;
+        align-items: center;
+      }
+      .col .logo {
+        width: 130px;
+        height: max-content;
+      }
+      .col i {
+        color: #fff;
+      }
+      nav ul {
+        display: flex;
+        gap: 20px;
+      }
+      nav ul li {
+        list-style: none;
+      }
+      nav ul li a {
+        color: #ffffff98;
+        text-decoration: none;
+      }
+      nav ul li a:hover {
+        color: #ffffff;
+      }
+      .activeNavColor {
+        color: #ffffff;
+      }
+      .box {
+        background-color: aquamarine;
+        height: 150vh;
+      }
+      .col .profile {
+        width: 32px;
+        border-radius: 0.15rem;
+      }
+      /* navigation */
+
+      .navIconMenu {
+        width: 2em;
+        height: 2em;
+        color: #fff;
+      }
+      .navIconMenu[name="close-outline"] {
+        display: none;
+      }
+      .navIcon {
+        display: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      /* search  */
+
+      .search {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .search input {
+        height: 35px;
+        border-radius: 50px;
+        border: 1px solid #fff;
+        outline: none;
+        padding: 0 10px;
+        color: #fff;
+        background-color: transparent;
+      }
+      .search input::placeholder {
+        color: #fff;
+      }
+      #movieBtn {
+        cursor: pointer;
+      }
+      @media (max-width: 960px) {
+        .navIcon {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        nav {
+          position: absolute;
+          background-color: #141414;
+          top: 100%;
+          left: 0;
+          z-index: 3;
+          width: 230px;
+          height: 100vh;
+          padding: 10px 20px;
+          transform: translateX(-230px);
+          transition: all 0.5s;
+        }
+        nav ul {
+          flex-direction: column;
+        }
+        .header {
+          background-color: #141414;
+        }
+        .active nav {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        .active .navIcon .navIconMenu[name="close-outline"] {
+          display: block;
+        }
+        .active .navIcon .navIconMenu[name="menu-outline"] {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="mainNav">
+      <div class="row width">
+        <div class="col">
+          <img src="/dist/images/Netflix_Logo.png" alt="" class="logo" />
+          <div class="navIcon">
+            <ion-icon name="menu-outline" class="navIconMenu"></ion-icon>
+            <ion-icon name="close-outline" class="navIconMenu"></ion-icon>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#" class="activeNavColor">Home</a></li>
+              <li><a href="#">TV Shows</a></li>
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">New & Popular</a></li>
+              <li><a href="#">My List</a></li>
+              <li><a href="#">Browse by Languages</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col">
+          <div class="search">
+            <input type="text" id="movieInput" placeholder="Enter movie name" />
+            <i class="fa-solid fa-magnifying-glass" id="movieBtn"></i>
+          </div>
+          <img src="/dist/images/account.png" alt="" class="profile" />
+        </div>
+      </div>
+    </header>
+    <div class="box"></div>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        const mainNav = document.getElementById("mainNav");
+        if (window.scrollY > 100) {
+          mainNav.classList.add("activeBG");
+        } else {
+          mainNav.classList.remove("activeBG");
+        }
+      });
+      //nav
+
+      const navIcon = document.querySelector(".navIcon");
+      const navCont = document.querySelector(".header");
+
+      navIcon.addEventListener("click", () => {
+        navCont.classList.toggle("active");
+      });
+
+      //Search Function
+
+      const movieInput = document.getElementById("movieInput");
+      movieInput.addEventListener("keypress", (event) => {
+        const movieInputValue = movieInput.value;
+        if (event.key === "Enter") {
+          window.location.href = "search.html";
+          localStorage.setItem("movieInputValue", movieInputValue);
+        }
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/9ba24a9f81.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
