@@ -169,29 +169,6 @@ nav ul li a:hover {
     display: none;
   }
   .seachCont {
-    /* grid-template-columns: repeat(6, 1fr); */
-  }
-}
-
-@media (max-width: 600px) {
-  .seachCont {
-    /* grid-template-columns: repeat(3, 1fr); */
-    row-gap: 10px;
-    column-gap: 10px;
-  }
-}
-
-@media (min-width: 1300px) and (max-width: 2000px) {
-  .seachCont {
-    /* grid-template-columns: repeat(8, 1fr); */
-  }
-  .seachCont img {
-    display: flex;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: ease-out 0.5s;
-    cursor: pointer;
-    border-radius: 0.25rem;
+    gap: 10px;
   }
 }
