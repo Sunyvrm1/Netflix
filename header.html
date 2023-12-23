@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -75,8 +75,10 @@
         color: #ffffff;
       }
       .box {
-        background-color: aquamarine;
+        background-color: transparent;
         height: 150vh;
+        position: relative;
+        z-index: -10;
       }
       .col .profile {
         width: 32px;
@@ -161,7 +163,9 @@
     <header class="header" id="mainNav">
       <div class="row width">
         <div class="col">
-          <img src="/dist/images/Netflix_Logo.png" alt="" class="logo" />
+          <a href="/home.html">
+            <img src="/dist/images/Netflix_Logo.png" alt="" class="logo" />
+          </a>
           <div class="navIcon">
             <ion-icon name="menu-outline" class="navIconMenu"></ion-icon>
             <ion-icon name="close-outline" class="navIconMenu"></ion-icon>
@@ -186,8 +190,19 @@
         </div>
       </div>
     </header>
-    <div class="box"></div>
 
+    <script
+      src="https://kit.fontawesome.com/9ba24a9f81.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script>
       window.addEventListener("scroll", () => {
         const mainNav = document.getElementById("mainNav");
@@ -197,6 +212,7 @@
           mainNav.classList.remove("activeBG");
         }
       });
+
       //nav
 
       const navIcon = document.querySelector(".navIcon");
@@ -217,17 +233,5 @@
         }
       });
     </script>
-    <script
-      src="https://kit.fontawesome.com/9ba24a9f81.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
   </body>
-</html>
+</html> -->

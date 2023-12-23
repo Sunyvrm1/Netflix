@@ -345,6 +345,7 @@ button i {
   display: flex;
   gap: 10px;
   align-items: center;
+  /* position: relative; */
 }
 .search input {
   height: 35px;
@@ -560,6 +561,18 @@ button i {
   }
   .row1 {
     margin-top: -1px;
+  }
+  #movieInput {
+    display: none;
+    position: absolute;
+    top: 80px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .moviehideShow {
+    display: block !important;
   }
   /* .activeBG {
   background-color: currentColor;

@@ -199,3 +199,10 @@ movieInput.addEventListener("keypress", (event) => {
   }
   movieInput.innerHTML = "";
 });
+
+//Search function in mobile
+
+const movieBtn = document.getElementById("movieBtn");
+movieBtn.addEventListener("click", () => {
+  movieInput.classList.toggle("moviehideShow");
+});

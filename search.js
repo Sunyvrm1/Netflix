@@ -12,6 +12,9 @@ navIcon.addEventListener("click", () => {
 const storedSearch = localStorage.getItem("movieInputValue");
 console.log(storedSearch);
 
+const searchPara = document.getElementById("searchPara");
+searchPara.innerHTML = `Showing results related to "${storedSearch}"`;
+
 const apiKey = `https://api.themoviedb.org/3/search/movie?query=${storedSearch}&api_key=d7667b78097516f5e82e6955576dcf62`;
 
 fetch(apiKey)
@@ -23,7 +26,7 @@ fetch(apiKey)
     const searchImg = document.querySelector(".seachCont img");
     data.results.map((apiImage) => {
       if (apiImage.poster_path == null) {
-        searchImg.style.display = "none";
+        // searchImg.style.display = "none";
       } else {
         const html = `<img src="https://image.tmdb.org/t/p/w500/${apiImage.poster_path}" alt="${apiImage.id}" data-author="${apiKey}" />`;
         searchCont.insertAdjacentHTML("beforeend", html);
