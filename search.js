@@ -21,6 +21,9 @@ fetch(
 
     data.results.map((apiImage) => {
       const searchCont = document.querySelector(".seachCont");
+      if (apiImage.poster_path == "null") {
+        `<img src="https://image.tmdb.org/t/p/w500/" alt="" />`;
+      }
       const html = `<img src="https://image.tmdb.org/t/p/w500/${apiImage.poster_path}" alt="${apiImage.id}" />`;
       searchCont.insertAdjacentHTML("beforeend", html);
     });
