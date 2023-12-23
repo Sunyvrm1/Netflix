@@ -10,6 +10,10 @@
   width: 95%;
   margin: 0 auto;
 }
+.search {
+  display: flex;
+  flex-direction: column;
+}
 .header {
   width: 100%;
   width: 100%;
@@ -95,8 +99,15 @@ nav ul li a:hover {
   z-index: 1;
   padding: 50px 0;
 }
+.seachCont {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+}
 .seachCont img {
-  max-width: 150px;
+  display: flex;
+  width: 100%;
   height: 225px;
   object-fit: cover;
 }

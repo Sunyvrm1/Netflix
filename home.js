@@ -132,7 +132,6 @@ function fetchandDisplay(apiEndpoint, targetBox, clickHandler) {
         <div class="images1">
           <img src="https://image.tmdb.org/t/p/w500/${item.backdrop_path}" alt="${item.id}" data-author="${apiEndpoint}"/>
         </div>`;
-        // console.log(apiEndpoint);
         box.insertAdjacentHTML("beforeend", html);
       });
 
