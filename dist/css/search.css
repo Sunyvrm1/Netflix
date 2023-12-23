@@ -101,7 +101,8 @@ nav ul li a:hover {
 }
 .seachCont {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  /* grid-template-columns: repeat(7, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
   row-gap: 20px;
   column-gap: 20px;
   align-items: stretch;
@@ -168,13 +169,13 @@ nav ul li a:hover {
     display: none;
   }
   .seachCont {
-    grid-template-columns: repeat(6, 1fr);
+    /* grid-template-columns: repeat(6, 1fr); */
   }
 }
 
 @media (max-width: 600px) {
   .seachCont {
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     row-gap: 10px;
     column-gap: 10px;
   }
@@ -182,7 +183,7 @@ nav ul li a:hover {
 
 @media (min-width: 1300px) and (max-width: 2000px) {
   .seachCont {
-    grid-template-columns: repeat(8, 1fr);
+    /* grid-template-columns: repeat(8, 1fr); */
   }
   .seachCont img {
     display: flex;
