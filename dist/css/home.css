@@ -357,6 +357,9 @@ button i {
 }
 
 @media (max-width: 1279px) {
+  .images1 img:hover {
+    transform: none;
+  }
   #movieInput {
     display: none;
     position: absolute;
