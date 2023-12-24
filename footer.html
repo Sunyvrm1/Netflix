@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+      }
+      .section {
+        padding: 4.5rem 0;
+        background-color: #141414;
+      }
+      .footerWidth {
+        width: calc(83% - 6rem);
+        margin: 0 auto;
+      }
+      .para4 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        text-decoration: underline;
+      }
+      .para5 {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #fff;
+      }
+      .footerGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 15px;
+      }
+      @media (min-width: 1900px) {
+        .footerWidth {
+          width: calc(66.66666666666666% - 6rem);
+        }
+      }
+      @media (max-width: 960px) {
+        .footerWidth {
+          width: 95%;
+        }
+        .footerGrid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <section class="section">
+        <div class="footerWidth">
+          <p class="para5">Questions? Call 000-800-919-1694</p>
+          <div class="footerGrid">
+            <p class="para4">FAQ</p>
+            <p class="para4">Help Centre</p>
+            <p class="para4">Account</p>
+            <p class="para4">Media Centre</p>
+            <p class="para4">Investor Relations</p>
+            <p class="para4">Jobs</p>
+            <p class="para4">Ways to Watch</p>
+            <p class="para4">Terms of Use</p>
+            <p class="para4">Privacy</p>
+            <p class="para4">Cookie Preferences</p>
+            <p class="para4">Corporate Information</p>
+            <p class="para4">Contact Us</p>
+            <p class="para4">Speed Test</p>
+            <p class="para4">Legal Notices</p>
+            <p class="para4">Only on Netflix</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

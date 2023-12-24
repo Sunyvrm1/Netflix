@@ -294,31 +294,6 @@ button i {
   z-index: 10;
   display: none;
 }
-.section {
-  padding: 4.5rem 0;
-  background-color: #141414;
-}
-.width1 {
-  width: calc(83% - 6rem);
-  margin: 0 auto;
-}
-.para4 {
-  font-size: 14px;
-  font-weight: 400;
-  color: #fff;
-  text-decoration: underline;
-}
-.para5 {
-  margin-bottom: 20px;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #fff;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 15px;
-}
 
 /* navigation */
 
@@ -379,12 +354,21 @@ button i {
   .posterText {
     height: 90vh;
   }
-  .width1 {
-    width: calc(66.66666666666666% - 6rem);
-  }
 }
 
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (max-width: 1279px) {
+  #movieInput {
+    display: none;
+    position: absolute;
+    top: 80px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .moviehideShow {
+    display: block !important;
+  }
   .carouselbox {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -392,6 +376,15 @@ button i {
   .switchLeft,
   .switchRight {
     display: none !important;
+  }
+  .poster,
+  .posterText,
+  .overlay,
+  .posterImg {
+    height: 90vh;
+  }
+  .posterText {
+    width: 60%;
   }
   .carouselbox::-webkit-scrollbar {
     display: none;
@@ -402,24 +395,6 @@ button i {
   }
   .carouselbox1::-webkit-scrollbar {
     display: none;
-  }
-  .width1 {
-    width: 95%;
-    margin: 0 auto;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-  }
-  .poster,
-  .posterText,
-  .overlay,
-  .posterImg {
-    height: 90vh;
-  }
-  .posterText {
-    width: 60%;
   }
 }
 @media (max-width: 960px) {
@@ -462,78 +437,9 @@ button i {
   .active .navIcon .navIconMenu[name="menu-outline"] {
     display: none;
   }
-  .carouselbox {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-  .switchLeft,
-  .switchRight {
-    display: none !important;
-  }
-  .carouselbox::-webkit-scrollbar {
-    display: none;
-  }
-  .carouselbox1 {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-  .carouselbox1::-webkit-scrollbar {
-    display: none;
-  }
-  .width1 {
-    width: 95%;
-    margin: 0 auto;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-  }
-  .poster,
-  .posterText,
-  .overlay,
-  .posterImg {
-    height: 90vh;
-  }
-  .posterText {
-    width: 60%;
-  }
 }
 
 @media (max-width: 600px) {
-  .col {
-    flex-direction: row-reverse;
-  }
-  .col:nth-child(2) {
-    flex-direction: row;
-  }
-  .carouselbox {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-  .switchLeft,
-  .switchRight {
-    display: none !important;
-  }
-  .carouselbox::-webkit-scrollbar {
-    display: none;
-  }
-  .carouselbox1 {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-  .carouselbox1::-webkit-scrollbar {
-    display: none;
-  }
-  .width1 {
-    width: 95%;
-    margin: 0 auto;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-  }
   .poster,
   .posterText,
   .overlay,
@@ -576,35 +482,5 @@ button i {
   }
   .row1 {
     margin-top: -1px;
-  }
-  #movieInput {
-    display: none;
-    position: absolute;
-    top: 80px;
-    width: 95%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .moviehideShow {
-    display: block !important;
-  }
-  /* .activeBG {
-  background-color: currentColor;
-  position: static;
-} */
-}
-@media (max-width: 1279px) {
-  #movieInput {
-    display: none;
-    position: absolute;
-    top: 80px;
-    width: 95%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .moviehideShow {
-    display: block !important;
   }
 }

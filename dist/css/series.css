@@ -41,36 +41,9 @@
   position: relative;
   padding: 50px 0;
   z-index: 1;
-  background-size: cover;
-  background-position: center 45%;
-}
-.overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  background: url("/dist/images/series_Netflix1.jpg");
+  background: url("/dist/images/netBack.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-}
-.overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: #00000090;
-  /* background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.1)
-  ); */
 }
 .overlay img {
   width: 100%;
@@ -113,51 +86,17 @@ h1 {
 .para2 {
   margin-bottom: 6px;
 }
-.para4 {
-  font-size: 14px;
-  font-weight: 400;
-  color: #fff;
-  text-decoration: underline;
-}
-.para5 {
-  margin-bottom: 20px;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #fff;
-}
-.section {
-  padding: 4.5rem 0;
-  background-color: #141414;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 15px;
-}
 
 @media (max-width: 960px) {
+  .overlay img {
+    width: 50%;
+    margin: 0 auto;
+  }
   .row1 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
     color: #fff;
     align-items: center;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-  }
-}
-@media (max-width: 1279px) {
-  .width1 {
-    width: 95%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1900px) {
-  .width1 {
-    width: calc(66.66666666666666% - 6rem);
   }
 }
