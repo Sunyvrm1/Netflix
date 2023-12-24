@@ -192,7 +192,7 @@ button i {
   cursor: pointer;
   transition: 0.5s ease;
   z-index: 2;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .carousel .switchLeft,
 .carousel .switchRight {
@@ -262,9 +262,6 @@ button i {
   transition: 0.5s ease;
   z-index: 2;
 }
-/* .carouselbox1 .images1 img:hover {
-  transform: scale(1.3);
-} */
 .carousel1 .switchLeft,
 .carousel1 .switchRight {
   color: #fff;
@@ -361,6 +358,12 @@ button i {
 }
 #movieBtn {
   cursor: pointer;
+}
+.images1 img {
+  border-radius: 5px;
+}
+.images1 img:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 1900px) {
@@ -492,6 +495,12 @@ button i {
 }
 
 @media (max-width: 600px) {
+  .col {
+    flex-direction: row-reverse;
+  }
+  .col:nth-child(2) {
+    flex-direction: row;
+  }
   .carouselbox {
     overflow-x: scroll;
     overflow-y: hidden;

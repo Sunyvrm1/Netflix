@@ -6,9 +6,6 @@
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;
 }
-/* body{
-  background-color: #141414;
-} */
 .width {
   width: 95%;
   margin: 0 auto;
@@ -80,22 +77,52 @@ nav ul li a:hover {
 .overlay {
   width: 100%;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.664);
   position: relative;
-  z-index: 1;
   padding: 50px 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center 45%;
+}
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: url("/dist/images/series_Netflix1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #00000090;
+  /* background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.1)
+  ); */
 }
 .overlay img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 .width1 {
-  width: calc(83% - 6rem);
+  width: 95%;
   margin: 0 auto;
 }
 .row1 {
   display: grid;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 3fr 7fr;
   gap: 3rem;
   color: #fff;
   align-items: center;
