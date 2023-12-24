@@ -423,6 +423,12 @@ button i {
   }
 }
 @media (max-width: 960px) {
+  .col {
+    flex-direction: row-reverse;
+  }
+  .col:nth-child(2) {
+    flex-direction: row;
+  }
   .navIcon {
     display: flex;
     justify-content: flex-end;
