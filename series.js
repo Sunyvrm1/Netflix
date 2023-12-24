@@ -40,9 +40,9 @@ displayMovies(storedId1, storedId);
 
 //nav
 
-const navIcon = document.querySelector(".navIcon");
-const navCont = document.querySelector(".header");
+// const navIcon = document.querySelector(".navIcon");
+// const navCont = document.querySelector(".header");
 
-navIcon.addEventListener("click", () => {
-  navCont.classList.toggle("active");
-});
+// navIcon.addEventListener("click", () => {
+//   navCont.classList.toggle("active");
+// });

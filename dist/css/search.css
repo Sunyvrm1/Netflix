@@ -13,14 +13,6 @@ body {
   width: 95%;
   margin: 0 auto;
 }
-/* .search {
-  display: flex;
-} */
-/* .header {
-  width: 100%;
-  width: 100%;
-  background: #141414;
-} */
 .header {
   position: fixed;
   left: 0 !important;
@@ -29,74 +21,6 @@ body {
   width: 100%;
   background: #141414 !important;
 }
-/* .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2em;
-  padding: 15px 0;
-}
-.row2 {
-  display: flex;
-  justify-content: space-between;
-  gap: 2em;
-  margin-top: 35px;
-}
-.col2 {
-  width: 50%;
-}
-.col {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2em;
-  align-items: center;
-}
-.col .logo {
-  width: 130px;
-  height: max-content;
-}
-.col i {
-  color: #fff;
-}
-nav ul {
-  display: flex;
-  gap: 20px;
-}
-nav ul li {
-  list-style: none;
-}
-nav ul li a {
-  color: #ffffff98;
-  text-decoration: none;
-}
-nav ul li a:hover {
-  color: #ffffff;
-}
-.activeNavColor {
-  color: #ffffff;
-}
-.col .profile {
-  width: 32px;
-  border-radius: 0.15rem;
-} */
-
-/* navigation */
-
-/* .navIconMenu {
-  width: 2em;
-  height: 2em;
-  color: #fff;
-}
-.navIconMenu[name="close-outline"] {
-  display: none;
-}
-.navIcon {
-  display: none;
-  background: transparent;
-  cursor: pointer;
-} */
-
-/* ssdfsd */
 
 .overlay {
   width: 100%;
@@ -135,46 +59,6 @@ nav ul li a:hover {
 }
 
 @media (max-width: 960px) {
-  /* .navIcon {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  nav {
-    position: absolute;
-    background-color: #141414;
-    top: 100%;
-    left: 0;
-    z-index: 3;
-    width: 230px;
-    height: 100vh;
-    padding: 10px 20px;
-    transform: translateX(-230px);
-    transition: all 0.5s;
-  }
-  nav ul {
-    flex-direction: column;
-  }
-  .header {
-    position: relative;
-  }
-  .row1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    color: #fff;
-    align-items: center;
-  }
-  .active nav {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  .active .navIcon .navIconMenu[name="close-outline"] {
-    display: block;
-  }
-  .active .navIcon .navIconMenu[name="menu-outline"] {
-    display: none;
-  } */
   .seachCont {
     gap: 10px;
   }
