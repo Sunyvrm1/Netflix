@@ -206,3 +206,28 @@ const movieBtn = document.getElementById("movieBtn");
 movieBtn.addEventListener("click", () => {
   movieInput.classList.toggle("moviehideShow");
 });
+
+//slider banner function
+
+const slider = document.querySelector(".posterScroller");
+const slides = document.querySelectorAll(".poster");
+const intervalTime = 3000; // Set time interval in milliseconds
+let slideIndex = 0;
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % slides.length;
+  updateSlider();
+}
+
+function updateSlider() {
+  slider.style.transform = `translateX(${-slideIndex * 100}%)`;
+  slides.forEach((slide, index) => {
+    index === slideIndex
+      ? slide.classList.add("active")
+      : slide.classList.remove("active");
+  });
+}
+
+setInterval(nextSlide, intervalTime);
+
+//fetch slider images
