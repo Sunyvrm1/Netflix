@@ -87,6 +87,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// -------------------------- Calling slider API --------------------------
+
+const btn2 = document.querySelectorAll(".btn2");
+btn2.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const selected = btn.parentElement.parentElement.nextElementSibling;
+    const clickedId =
+      btn.parentElement.parentElement.nextElementSibling.getAttribute("alt");
+    const clickedId1 =
+      btn.parentElement.parentElement.nextElementSibling.getAttribute(
+        "data-author"
+      );
+    localStorage.setItem("clickedId", clickedId);
+    localStorage.setItem("clickedId1", clickedId1);
+    window.location.href = "series.html";
+    console.log(selected.getAttribute("alt"));
+  });
+});
+
 // -------------------------- Calling API 1 --------------------------
 
 function top10fetchandDisplay(apiKey, clickHandler) {

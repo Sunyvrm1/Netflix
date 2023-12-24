@@ -1,7 +1,7 @@
 const storedId = localStorage.getItem("clickedId");
 const storedId1 = localStorage.getItem("clickedId1");
-// console.log(storedId);
-// console.log(storedId1);
+console.log(storedId);
+console.log(storedId1);
 
 function displayMovies(ApiURL, storedId) {
   fetch(ApiURL)
