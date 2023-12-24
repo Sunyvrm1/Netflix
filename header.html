@@ -17,26 +17,6 @@
         width: 95%;
         margin: 0 auto;
       }
-      .header {
-        position: fixed;
-        left: 50%;
-        top: 0;
-        z-index: 99;
-        transform: translate(-50%);
-        width: 100%;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.8),
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.2),
-          rgba(0, 0, 0, 0)
-        );
-        transition: all 0.5s;
-      }
-      .activeBG {
-        background-color: #000;
-      }
       .row {
         display: flex;
         justify-content: space-between;
@@ -99,6 +79,9 @@
         background: transparent;
         cursor: pointer;
       }
+      .header {
+        z-index: 11;
+      }
 
       /* search  */
 
@@ -123,6 +106,12 @@
         cursor: pointer;
       }
       @media (max-width: 960px) {
+        .col {
+          flex-direction: row-reverse;
+        }
+        .col:nth-child(2) {
+          flex-direction: row;
+        }
         .navIcon {
           display: flex;
           justify-content: flex-end;
@@ -155,6 +144,20 @@
         }
         .active .navIcon .navIconMenu[name="menu-outline"] {
           display: none;
+        }
+      }
+      @media (max-width: 1279px) {
+        #movieInput {
+          display: none;
+          position: absolute;
+          top: 80px;
+          width: 95%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+        .moviehideShow {
+          display: block !important;
         }
       }
     </style>
@@ -191,28 +194,7 @@
       </div>
     </header>
 
-    <script
-      src="https://kit.fontawesome.com/9ba24a9f81.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
     <script>
-      window.addEventListener("scroll", () => {
-        const mainNav = document.getElementById("mainNav");
-        if (window.scrollY > 100) {
-          mainNav.classList.add("activeBG");
-        } else {
-          mainNav.classList.remove("activeBG");
-        }
-      });
-
       //nav
 
       const navIcon = document.querySelector(".navIcon");
@@ -231,6 +213,13 @@
           window.location.href = "search.html";
           localStorage.setItem("movieInputValue", movieInputValue);
         }
+      });
+
+      //Search function in mobile
+
+      const movieBtn = document.getElementById("movieBtn");
+      movieBtn.addEventListener("click", () => {
+        movieInput.classList.toggle("moviehideShow");
       });
     </script>
   </body>
